@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const service = require('../services');
 
 // User functions
+
 const SignIn = async (req, res, next) => {
     try {
         const user = await User.create({
