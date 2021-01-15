@@ -33,16 +33,18 @@ module.exports = (sequelize,DataTypes) => {
 	Actor.associate = function(models){
 	
 		Actor.belongsToMany(models.Movie,{
-			as: 'ActorsMovie',
-			through: models.ActorMovie,
+			as: 'Movies',
+			through: 'actorMovies',
 			foreignKey: 'idActor',
-			otherKey:'idMovie'
+			otherKey:'idMovie',
+			timestamps: false
 		});
 		Actor.belongsToMany(models.Episode,{
-			as: 'ActorsEpisode',
-			through: models.ActorEpisode,
+			as: 'Episodes',
+			through: 'actorEpisode',
 			foreignKey: 'idActor',
-			otherKey:'idEpisode'
+			otherKey:'idEpisode',
+			timestamps: false
 		});
 	}
 

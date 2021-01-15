@@ -1,5 +1,7 @@
 const { Serie } = require('../database/models');
 
+// operators Sequelize
+const Op = require('Sequelize').Op; 
 
 const getAllSeries = async (req, res, next) => {
     try {
@@ -15,7 +17,6 @@ const getAllSeries = async (req, res, next) => {
             }
         })
     } catch (error) {
-        console.log(error);
         res.status(500).json({
             status: "ERROR",
             msg: "ERROR_SERVER",
@@ -128,11 +129,59 @@ const getSeasonDetail = async (req, res, next) => {
         })
     }
 }
+const Search = async (req, res, next) =>{
+
+    try {
+        const series = await Serie.findAll({
+            include: [
+                {
+                    association: "Seasons"
+                }
+            ],
+           where:{ title:{[Op.like]:`%${req.query.title}%`}}
+        });
+
+        if(series.length == 0){
+            
+           return res.status(404).json({
+                status: "ERROR",
+                msg: "SERIE_NOT_FOUND",
+                endpoint: `/api.series/search?title=${req.query.title}`,
+                method: "GET",
+                data: {
+                    type: "Series",
+                    data: series
+                }
+            });
+        }
+        res.status(200).json({
+            status: "OK",
+            msg: "SERIE_FOUND",
+            endpoint: `/api.series/search?title=${req.query.title}`,
+            method: "GET",
+            data: {
+                type: "Series",
+                data: series
+            }
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            status: "ERROR",
+            msg: "ERROR_SERVER",
+            endpoint: `/api.series/search?title=${req.query.title}`,
+            method: "GET",
+            data: error
+        })
+    }
+}
+
 
 
 module.exports = {
     getAllSeries,
     getSerieDetail,
     getEpisodeDetail,
-    getSeasonDetail
+    getSeasonDetail,
+    Search
 }

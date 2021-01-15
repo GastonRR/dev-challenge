@@ -1,6 +1,9 @@
+// db model
 const { User } = require('../database/models')
+
 const bcrypt = require('bcrypt');
-const service = require('../services');
+
+const service = require('../services'); // jwt
 
 // User functions
 

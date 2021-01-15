@@ -8,7 +8,6 @@ const userController = require('../controllers/usersController')
 
 router.get('/detail/:id', userController.getUser);
 
-
 /* POST */
 
 router.post('/SignIn', userController.SignIn);
