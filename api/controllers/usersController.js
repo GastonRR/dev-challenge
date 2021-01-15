@@ -1,4 +1,4 @@
-// db model
+// DB MODEL USER
 const { User } = require('../database/models')
 
 const bcrypt = require('bcrypt');

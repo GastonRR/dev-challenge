@@ -1,9 +1,10 @@
-// db model
+// DB MODEL MOVIE
 const { Movie } = require('../database/models');
 
 // Operators Sequelize
 const Op = require('Sequelize').Op;
 
+// controllers Routes 
 
 const getAllMovies = async (req, res, next) =>{
 

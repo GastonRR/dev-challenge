@@ -1,8 +1,11 @@
+// DB MODEL SERIE
 const { Serie } = require('../database/models');
 
 // operators Sequelize
 const Op = require('Sequelize').Op; 
 
+
+// controllers Routes 
 const getAllSeries = async (req, res, next) => {
     try {
         const series = await Serie.findAll();

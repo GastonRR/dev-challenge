@@ -3,6 +3,9 @@ const jwt = require('jwt-simple');
 const moment = require('moment');
 const config = require('../config');
 
+// functions JWT
+
+//Create Token
 function createToken(user){
     const payload = {
         sub: user.id,
@@ -11,6 +14,8 @@ function createToken(user){
     }
     return jwt.encode(payload, config.SECRET_TOKEN);
 }
+
+// Decode Token
 function decodeToken(token){
     const decoded = new Promise((resolve, reject)=>{
         try {
