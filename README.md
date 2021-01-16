@@ -12,11 +12,10 @@
 ## How to use
   
 **`You need to clone the repository, move to the api folder and run "npm install"`**
+
 **`In the public folder of the repository is the database instance, install the database.`**
+
 **`When "npm install" finishes and you have the base installed and started, run "npm run test" to start the API with nodemon.`**
-
-
-
 
 
 **User Test - Log In**
