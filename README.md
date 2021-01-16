@@ -21,7 +21,7 @@
 
 **User Test - Log In**
 
->    You must log in to get a ** TOKEN **
+>    You must log in to get a **TOKEN**
 - **email: admin@admin.com** 
 - **password: 1admin1** 
 > the JWT must be sent through the header with the key: **"authorization"**
@@ -63,15 +63,66 @@
  >  you need to send a POST request with the necessary fields 
 
 
-##      Entidades de base de datos
+## Database entities and form fields
 
-- User 
-- Movie 
-- Serie 
-- Season 
-- Episodes - there is only one episode per season
-- Actor 
-- Director
+- **User**  
+**fields for request body**
+
+>    - name
+>    - email 
+>    - password
+>    
+ - **Movie** 
+ **fields for request body**
+
+>    - title
+>    - awards
+>    - duration
+>    - releaseDate 
+>    - idGenre
+>    - idDirector
+
+ - **Serie** 
+ **fields for request body**
+
+>    - title
+>    - releaseDate 
+>    - idGenre
+
+ - **Season** 
+ - **fields for request body**
+
+>    - title
+>    - releaseDate 
+>    - idSerie
+
+ - **Episodes** - there is only one episode per season
+ **fields for request body**
+
+>    - title
+>    - releaseDate 
+>    - idSeason
+>    - idDirector
+
+ - **Actor** 
+ **fields for request body**
+
+>    - name
+>    - lastName
+>    - awards
+
+ -  **Director**
+ **fields for request body**
+
+>    - name
+>    - lastName
+>    - awards
+
+  -  **Genre**
+ **fields for request body**
+
+>    - name
+
 
 
 
