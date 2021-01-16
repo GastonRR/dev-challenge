@@ -1,4 +1,3 @@
-
 const jwt = require('jwt-simple');
 const moment = require('moment');
 const config = require('../config');
@@ -22,7 +21,6 @@ function decodeToken(token){
             
             const payload = jwt.decode(token, config.SECRET_TOKEN);
             
-            console.log(payload);
             if (payload.exp < moment().unix()){
                 reject({
                     status: 401,

@@ -5,7 +5,7 @@ const { Serie } = require('../database/models');
 const Op = require('Sequelize').Op; 
 
 
-// controllers Routes 
+// functions for each serie route
 const getAllSeries = async (req, res, next) => {
     try {
         const series = await Serie.findAll();

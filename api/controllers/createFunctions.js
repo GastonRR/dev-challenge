@@ -4,6 +4,8 @@ const db = require('../database/models');
 const bcrypt = require('bcrypt');
 var moment = require('moment');
 
+//Global functions for creation of all entities
+
 const Genre = (body) => {
     const create = new Promise(async (resolve, reject) => {
         try {

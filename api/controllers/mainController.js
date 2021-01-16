@@ -1,6 +1,8 @@
-const service = require('../services'); // jwt\
+const service = require('../services'); // jwt
+
 const createFunctions = require('./createFunctions')
 
+//controller with a switch for each entity
 
 const Create = async (req, res, next) => {
     switch (req.params.object) {

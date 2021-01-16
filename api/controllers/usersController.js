@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 const service = require('../services'); // jwt
 
-// User functions
+// User functions for routes 
 
 const SignIn = async (req, res, next) => {
     try {

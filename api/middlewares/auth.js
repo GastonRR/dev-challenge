@@ -1,6 +1,7 @@
-
 const services = require('../services')
 
+
+// Authentication Middleware
 
 function isAuth(req, res, next){
     if(!req.headers.authorization){

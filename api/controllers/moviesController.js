@@ -4,7 +4,7 @@ const { Movie } = require('../database/models');
 // Operators Sequelize
 const Op = require('Sequelize').Op;
 
-// controllers Routes 
+// functions for each movie route
 
 const getAllMovies = async (req, res, next) =>{
 
