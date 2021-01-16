@@ -9,9 +9,9 @@ const moviesController = require('../controllers/moviesController');
 
 /* GET */
 router.get('/', auth ,moviesController.getAllMovies); //ALL Movies
-router.get('/detail/:id', auth ,moviesController.getDetailMovieId); // Get MOVIE for ID
-router.get('/genre/:id', auth ,moviesController.getMoviesGenre); // Get all Movies with same genre
-router.get('/search', auth,moviesController.Search) // get all the movies it finds with the query string
+router.get('/detail/:id', auth ,moviesController.getDetailMovieId); // get movie detail by id
+router.get('/genre/:id', auth ,moviesController.getMoviesGenre); // get all the movies by genre
+router.get('/search', auth,moviesController.Search) // get all the movies you are looking for by title
 
 
 

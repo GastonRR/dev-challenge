@@ -8,10 +8,10 @@ const seriesController = require('../controllers/seriesController')
 
 /* GET */
 router.get('/',auth,seriesController.getAllSeries); // All series
-router.get('/detail/:id',auth,seriesController.getSerieDetail); // Detail serie
-router.get('/detail/:id/:season/:episode',auth,seriesController.getEpisodeDetail); // Detail episode with director info
-router.get('/detail/:id/:season', auth ,seriesController.getSeasonDetail); // detail season with serie info
-router.get('/search', auth ,seriesController.Search) // // get all the series it finds with the query string
+router.get('/detail/:id',auth,seriesController.getSerieDetail); // get serie detail by id
+router.get('/detail/:id/:season/:episode',auth,seriesController.getEpisodeDetail); // episode detail with director information
+router.get('/detail/:id/:season', auth ,seriesController.getSeasonDetail); // get season detail by season number and id serie
+router.get('/search', auth ,seriesController.Search) // get all the series you are looking for by title
 
 
 module.exports = router;
