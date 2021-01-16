@@ -125,7 +125,7 @@
 
 
 
-## Diagrama de la base de datos EER
+## EER database diagram
 
 ![ingrese la descripción de la imagen aquí](https://i.imgur.com/MhFOzBY.png)
 
